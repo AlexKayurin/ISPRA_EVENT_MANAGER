@@ -15,11 +15,11 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QAbstractItemView, QApplication, QComboBox, QHBoxLayout,
-    QHeaderView, QLabel, QLineEdit, QMainWindow,
-    QMenuBar, QPushButton, QSizePolicy, QSpacerItem,
-    QSpinBox, QSplitter, QTableWidget, QTableWidgetItem,
-    QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QAbstractItemView, QApplication, QComboBox, QGroupBox,
+    QHBoxLayout, QHeaderView, QLabel, QLineEdit,
+    QMainWindow, QMenuBar, QPushButton, QRadioButton,
+    QSizePolicy, QSpacerItem, QSpinBox, QSplitter,
+    QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -33,15 +33,15 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.horizontalLayout = QHBoxLayout()
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout_6 = QHBoxLayout()
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
         self.b_selectevt = QPushButton(self.centralwidget)
         self.b_selectevt.setObjectName(u"b_selectevt")
         self.b_selectevt.setMinimumSize(QSize(150, 50))
         self.b_selectevt.setMaximumSize(QSize(150, 50))
         self.b_selectevt.setFont(font)
 
-        self.horizontalLayout.addWidget(self.b_selectevt)
+        self.horizontalLayout_6.addWidget(self.b_selectevt)
 
         self.b_selectdvix = QPushButton(self.centralwidget)
         self.b_selectdvix.setObjectName(u"b_selectdvix")
@@ -49,11 +49,11 @@ class Ui_MainWindow(object):
         self.b_selectdvix.setMaximumSize(QSize(150, 50))
         self.b_selectdvix.setFont(font)
 
-        self.horizontalLayout.addWidget(self.b_selectdvix)
+        self.horizontalLayout_6.addWidget(self.b_selectdvix)
 
         self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.horizontalLayout.addItem(self.horizontalSpacer)
+        self.horizontalLayout_6.addItem(self.horizontalSpacer)
 
         self.b_selectcmt = QPushButton(self.centralwidget)
         self.b_selectcmt.setObjectName(u"b_selectcmt")
@@ -61,10 +61,10 @@ class Ui_MainWindow(object):
         self.b_selectcmt.setMaximumSize(QSize(150, 50))
         self.b_selectcmt.setFont(font)
 
-        self.horizontalLayout.addWidget(self.b_selectcmt)
+        self.horizontalLayout_6.addWidget(self.b_selectcmt)
 
 
-        self.verticalLayout.addLayout(self.horizontalLayout)
+        self.verticalLayout.addLayout(self.horizontalLayout_6)
 
         self.horizontalLayout_3 = QHBoxLayout()
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
@@ -143,6 +143,41 @@ class Ui_MainWindow(object):
 
 
         self.verticalLayout.addLayout(self.horizontalLayout_3)
+
+        self.horizontalLayout_4 = QHBoxLayout()
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.horizontalSpacer_5 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_4.addItem(self.horizontalSpacer_5)
+
+        self.groupBox = QGroupBox(self.centralwidget)
+        self.groupBox.setObjectName(u"groupBox")
+        self.groupBox.setMinimumSize(QSize(200, 30))
+        self.groupBox.setMaximumSize(QSize(200, 30))
+        self.horizontalLayout = QHBoxLayout(self.groupBox)
+        self.horizontalLayout.setSpacing(2)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout.setContentsMargins(2, 2, 2, 2)
+        self.rb_replace = QRadioButton(self.groupBox)
+        self.rb_replace.setObjectName(u"rb_replace")
+        self.rb_replace.setMinimumSize(QSize(100, 20))
+        self.rb_replace.setMaximumSize(QSize(100, 20))
+
+        self.horizontalLayout.addWidget(self.rb_replace)
+
+        self.rb_merge = QRadioButton(self.groupBox)
+        self.rb_merge.setObjectName(u"rb_merge")
+        self.rb_merge.setMinimumSize(QSize(100, 20))
+        self.rb_merge.setMaximumSize(QSize(100, 20))
+        self.rb_merge.setChecked(True)
+
+        self.horizontalLayout.addWidget(self.rb_merge)
+
+
+        self.horizontalLayout_4.addWidget(self.groupBox)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_4)
 
         self.horizontalLayout_2 = QHBoxLayout()
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
@@ -264,6 +299,9 @@ class Ui_MainWindow(object):
         self.lab_2.setText(QCoreApplication.translate("MainWindow", u"to 'events' column:", None))
         self.lab_3.setText(QCoreApplication.translate("MainWindow", u"with separator:", None))
         self.lineed_separator.setText(QCoreApplication.translate("MainWindow", u"/", None))
+        self.groupBox.setTitle("")
+        self.rb_replace.setText(QCoreApplication.translate("MainWindow", u"Replace", None))
+        self.rb_merge.setText(QCoreApplication.translate("MainWindow", u"Merge", None))
         self.lab_4.setText(QCoreApplication.translate("MainWindow", u"Filter column:", None))
         self.lab_5.setText(QCoreApplication.translate("MainWindow", u"by value:", None))
         self.b_merge.setText(QCoreApplication.translate("MainWindow", u"Merge", None))

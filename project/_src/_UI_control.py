@@ -123,6 +123,6 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"CAMERA NAME", None));
         self.b_run.setText(QCoreApplication.translate("MainWindow", u"Save track and events", None))
         self.b_comments.setText(QCoreApplication.translate("MainWindow", u"Manage events", None))
-        self.lab_1.setText(QCoreApplication.translate("MainWindow", u"30/01/2026   v1.4", None))
+        self.lab_1.setText(QCoreApplication.translate("MainWindow", u"06/02/2026   v1.5", None))
     # retranslateUi
 
